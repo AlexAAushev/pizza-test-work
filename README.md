@@ -21,3 +21,5 @@ https://www.figma.com/file/8FvAWXCD2oD9oSDHx9xFfU/%D0%A2%D0%B5%D1%81%D1%82%D0%BE
 Приложение "сырое", произвольная логика не выполнена.
 
 ## Демонстрация работы приложения:
+
+https://github.com/AlexAAushev/pizza-test-work/assets/126689986/3943219e-92c5-43bb-8736-602ef3f18541
