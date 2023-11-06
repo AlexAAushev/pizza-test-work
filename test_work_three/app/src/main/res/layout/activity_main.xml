@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBFB"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <HorizontalScrollView
+                android:id="@+id/banners"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+                android:scrollbars="none"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="?attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="112dp"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/sale_30"
+                        android:scaleType="center"
+                        app:srcCompat="@drawable/rectangle_1" />
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="112dp"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/birthday_present"
+                        android:scaleType="center"
+                        app:srcCompat="@drawable/rectangle_2" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                app:subtitleTextColor="@color/black"
+                app:titleTextColor="@color/black">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/moscow"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_marginTop="24dp"
+                        android:contentDescription="@string/choose_city"
+                        app:srcCompat="@drawable/ic_switch" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:srcCompat="@drawable/ic_qr_code"
+                    tools:ignore="ContentDescription" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    style="@style/Button"
+                    android:layout_width="88dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/category_button_background"
+                    android:text="@string/pizza"
+                    android:textAllCaps="false" />
+
+                <Button
+                    style="@style/Button"
+                    android:layout_width="88dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/category_button_background"
+                    android:text="@string/combo"
+                    android:textAllCaps="false" />
+
+                <Button
+                    style="@style/Button"
+                    android:layout_width="88dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/category_button_background"
+                    android:text="@string/Dessert"
+                    android:textAllCaps="false" />
+
+                <Button
+                    style="@style/Button"
+                    android:layout_width="88dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/category_button_background"
+                    android:text="@string/drinks"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/pizzaRecycler"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="56dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+    <!--        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+    <!--        tools:itemCount="5"-->
+    <!--        tools:list_item="@layout/list_for_pizza" />-->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:ignore="ScrollViewCount">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="151dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/pizza"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/image"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/some_title" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/image"
+                        app:layout_constraintTop_toBottomOf="@+id/title"
+                        android:text="@string/some_description" />
+
+                    <Button
+                        android:layout_width="87dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/price_button_background"
+                        android:text="@string/price"
+                        android:textColor="@color/accent"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="151dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_2"
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/pizza"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/image_2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/some_title" />
+
+                    <TextView
+                        android:id="@+id/description_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/image_2"
+                        app:layout_constraintTop_toBottomOf="@+id/title"
+                        android:text="@string/some_description" />
+
+                    <Button
+                        android:layout_width="87dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/price_button_background"
+                        android:text="@string/price"
+                        android:textColor="@color/accent"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="151dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_3"
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/pizza"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/image_3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/some_title" />
+
+                    <TextView
+                        android:id="@+id/description_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/image_3"
+                        app:layout_constraintTop_toBottomOf="@+id/title"
+                        android:text="@string/some_description" />
+
+                    <Button
+                        android:layout_width="87dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/price_button_background"
+                        android:text="@string/price"
+                        android:textColor="@color/accent"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="151dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_4"
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/pizza"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/image_4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/some_title" />
+
+                    <TextView
+                        android:id="@+id/description_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/image_4"
+                        app:layout_constraintTop_toBottomOf="@+id/title"
+                        android:text="@string/some_description" />
+
+                    <Button
+                        android:layout_width="87dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/price_button_background"
+                        android:text="@string/price"
+                        android:textColor="@color/accent"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="@color/gray"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/button_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/menu"
+            app:drawableTopCompat="@drawable/ic_menu"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/profile"
+            app:drawableTopCompat="@drawable/ic_profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/basket"
+            app:drawableTopCompat="@drawable/ic_basket" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
