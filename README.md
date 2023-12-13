@@ -22,3 +22,4 @@ https://www.figma.com/file/8FvAWXCD2oD9oSDHx9xFfU/%D0%A2%D0%B5%D1%81%D1%82%D0%BE
 
 ## Демонстрация работы приложения:
 
+[Test_work_HS (2).webm](https://github.com/AlexAAushev/pizza-test-work/assets/126689986/ab10106a-aa88-41ce-bbdf-0dbfca4d0cca)
